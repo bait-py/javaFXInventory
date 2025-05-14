@@ -1,0 +1,355 @@
+/* styles.css - Estilo WoW mejorado */
+
+/* Colores principales WoW */
+* {
+    -wow-gold: #ffd100;
+    -wow-gold-dark: #bf9b30;
+    -wow-background: linear-gradient(to bottom, #141414, #232323);
+    -wow-panel: linear-gradient(to bottom, #2c2721, #1d1a15);
+    -wow-border: #413c33;
+    -wow-highlight: #ffd100;
+
+    /* Colores para rareza de ítems */
+    -wow-poor: #9d9d9d;
+    -wow-common: #ffffff;
+    -wow-uncommon: #1eff00;
+    -wow-rare: #0070dd;
+    -wow-epic: #a335ee;
+    -wow-legendary: #ff8000;
+
+    /* Colores para clases */
+    -wow-warrior: #c79c6e;
+    -wow-mage: #69ccf0;
+    -wow-priest: #ffffff;
+    -wow-warlock: #9482c9;
+    -wow-rogue: #fff569;
+    -wow-druid: #ff7d0a;
+    -wow-hunter: #abd473;
+    -wow-shaman: #0070de;
+    -wow-paladin: #f58cba;
+}
+
+/* Estilos generales */
+.wow-pane {
+    -fx-background-color: -wow-background;
+    -fx-padding: 15;
+    -fx-font-family: "Friz Quadrata", "Times New Roman", serif;
+}
+
+/* Barra superior */
+.header-box {
+    -fx-background-color: rgba(0, 0, 0, 0.6);
+    -fx-background-radius: 5;
+    -fx-border-color: -wow-border;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+    -fx-padding: 10;
+    -fx-spacing: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 5);
+}
+
+.character-portrait {
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 2);
+    -fx-border-color: -wow-gold-dark;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+}
+
+.character-info {
+    -fx-spacing: 3;
+    -fx-padding: 2 0 0 5;
+}
+
+.character-name {
+    -fx-text-fill: -wow-warrior;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 2, 0, 1, 1);
+}
+
+.race-class {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.level {
+    -fx-text-fill: -wow-gold;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(0,0,0,0.5);
+    -fx-background-radius: 12;
+    -fx-padding: 3 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 1, 0, 0, 1);
+}
+
+.gold-container {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 15;
+    -fx-border-color: -wow-gold-dark;
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+    -fx-padding: 5 10;
+    -fx-spacing: 5;
+}
+
+.gold-amount {
+    -fx-text-fill: -wow-gold;
+    -fx-font-weight: bold;
+}
+
+/* Barras de estado */
+.status-bars {
+    -fx-padding: 5 0;
+}
+
+.bar-label {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 2 5;
+}
+
+.bar-value {
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 1, 0, 0, 1);
+}
+
+.health-bar {
+    -fx-pref-height: 18;
+    -fx-accent: linear-gradient(to bottom, #e03131, #c91414);
+    -fx-background-color: #390b0b;
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+}
+
+.mana-bar {
+    -fx-pref-height: 18;
+    -fx-accent: linear-gradient(to bottom, #3d7cc9, #224e87);
+    -fx-background-color: #0f213b;
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+}
+
+.exp-bar {
+    -fx-pref-height: 18;
+    -fx-accent: linear-gradient(to bottom, #b066ff, #7b36c0);
+    -fx-background-color: #311651;
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+}
+
+/* Paneles de contenido */
+.stats-panel, .equipment-panel, .inventory-panel {
+    -fx-background-color: -wow-panel;
+    -fx-background-radius: 5;
+    -fx-border-color: -wow-border;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 5);
+}
+
+.section-title {
+    -fx-text-fill: -wow-gold;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 0 0 8 0;
+    -fx-border-color: transparent transparent -wow-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 1, 0, 1, 1);
+}
+
+/* Estadísticas */
+.stats-grid {
+    -fx-padding: 5 0 15 0;
+}
+
+.stat-label {
+    -fx-text-fill: #aaa;
+    -fx-font-size: 13px;
+}
+
+.stat-value {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-alignment: center-right;
+}
+
+/* Equipamiento */
+.equipment-grid {
+    -fx-padding: 5;
+}
+
+.character-model {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);
+    -fx-padding: 10;
+}
+
+/* Inventario */
+.inventory-grid {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-background-radius: 5;
+    -fx-border-color: rgba(0, 0, 0, 0.4);
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+.quick-bar {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 5;
+    -fx-border-color: -wow-border;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+    -fx-min-height: 60;
+}
+
+/* Slots y contenedores de ítems */
+.inventory-slot {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 5;
+    -fx-border-color: #333;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-alignment: center;
+    -fx-padding: 2;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.5), 2, 0, 0, 0);
+    -fx-min-width: 70;
+    -fx-min-height: 70;
+    -fx-pref-width: 74;
+    -fx-pref-height: 74;
+}
+
+.inventory-slot:hover {
+    -fx-effect: dropshadow(three-pass-box, -wow-gold, 10, 0.5, 0, 0);
+    -fx-cursor: hand;
+    -fx-border-color: -wow-gold;
+}
+
+.equipment-slot {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 5;
+    -fx-border-color: #444;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-min-width: 70;
+    -fx-min-height: 70;
+    -fx-pref-width: 74;
+    -fx-pref-height: 74;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.7), 5, 0, 0, 0);
+}
+
+.equipment-slot:hover {
+    -fx-border-color: -wow-gold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, -wow-gold, 5, 0.3, 0, 0);
+}
+
+.quickbar-slot {
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+    -fx-background-radius: 5;
+    -fx-border-color: #444;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-pref-width: 54;
+    -fx-pref-height: 54;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.5), 2, 0, 0, 0);
+}
+
+.quickbar-slot:hover {
+    -fx-border-color: -wow-gold;
+    -fx-effect: dropshadow(gaussian, -wow-gold, 10, 0.3, 0, 0);
+    -fx-cursor: hand;
+}
+
+/* Etiquetas de nivel requerido */
+.level-req-label {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-padding: 2 4;
+    -fx-background-radius: 3;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 1, 0, 0, 1);
+}
+
+/* Barra inferior */
+.footer-box {
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+    -fx-padding: 5;
+    -fx-spacing: 8;
+    -fx-alignment: center;
+    -fx-border-color: -wow-border;
+    -fx-border-width: 2 0 0 0;
+}
+
+.tab-button {
+    -fx-background-color:
+            linear-gradient(to bottom, rgba(85, 67, 39, 0.9), rgba(47, 37, 22, 0.9)),
+            linear-gradient(to bottom, rgba(85, 67, 39, 0.9), rgba(47, 37, 22, 0.9));
+    -fx-background-radius: 5;
+    -fx-border-color: -wow-border;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 12px;
+    -fx-padding: 5 15;
+    -fx-min-width: 100;
+    -fx-font-family: "Friz Quadrata", "Times New Roman", serif;
+    -fx-font-weight: bold;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.5), 1, 0, 0, 1);
+}
+
+.tab-button:hover {
+    -fx-background-color:
+            linear-gradient(to bottom, rgba(117, 97, 60, 0.9), rgba(69, 55, 33, 0.9)),
+            linear-gradient(to bottom, rgba(117, 97, 60, 0.9), rgba(69, 55, 33, 0.9));
+    -fx-text-fill: -wow-gold;
+    -fx-cursor: hand;
+}
+
+.tab-button:pressed {
+    -fx-background-color:
+            linear-gradient(to bottom, rgba(47, 37, 22, 0.9), rgba(85, 67, 39, 0.9)),
+            linear-gradient(to bottom, rgba(47, 37, 22, 0.9), rgba(85, 67, 39, 0.9));
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.7), 3, 0, 0, 2);
+}
+
+/* Estilos para tooltips de ítems */
+.tooltip {
+    -fx-background-color: rgba(12, 12, 12, 0.95);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 10;
+    -fx-border-color: #333;
+    -fx-border-width: 1;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 10, 0.5, 0, 5);
+}
+
+/* Efecto para ítem siendo arrastrado */
+.item-drag {
+    -fx-opacity: 0.8;
+    -fx-effect: dropshadow(gaussian, -wow-gold, 15, 0.5, 0, 0);
+}
+
+/* Estilos para el tab activo */
+#character-tab {
+    -fx-background-color:
+            linear-gradient(to bottom, rgba(117, 97, 60, 0.9), rgba(69, 55, 33, 0.9)),
+            linear-gradient(to bottom, rgba(117, 97, 60, 0.9), rgba(69, 55, 33, 0.9));
+    -fx-text-fill: -wow-gold;
+    -fx-border-color: -wow-gold;
+    -fx-effect: dropshadow(gaussian, -wow-gold, 10, 0.15, 0, 0);
+}

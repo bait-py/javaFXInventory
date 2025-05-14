@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.wowinventory.controllers.CharacterController"
+            styleClass="wow-pane">
+
+    <!-- Barra superior con información del personaje -->
+    <top>
+        <VBox spacing="5">
+            <!-- Panel de información básica del personaje -->
+            <HBox styleClass="header-box">
+                <ImageView styleClass="character-portrait" fitWidth="64" fitHeight="64">
+                    <image>
+                        <Image url="@../img/character-portrait.png"/>
+                    </image>
+                </ImageView>
+
+                <VBox styleClass="character-info">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label fx:id="characterNameLabel" styleClass="character-name"/>
+                        <Label fx:id="levelLabel" styleClass="level"/>
+                    </HBox>
+                    <Label fx:id="raceClassLabel" styleClass="race-class"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="resources-container">
+                    <HBox styleClass="gold-container" alignment="CENTER">
+                        <ImageView styleClass="gold-icon" fitWidth="20" fitHeight="20">
+                            <image>
+                                <Image url="@../img/gold-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <Label fx:id="goldLabel" styleClass="gold-amount" text="0"/>
+                    </HBox>
+                </HBox>
+            </HBox>
+
+            <!-- Barras de estado (salud, maná, experiencia) -->
+            <HBox styleClass="status-bars" spacing="10">
+                <VBox styleClass="health-container" HBox.hgrow="ALWAYS">
+                    <Label text="Salud" styleClass="bar-label"/>
+                    <StackPane>
+                        <ProgressBar fx:id="healthBar" styleClass="health-bar" progress="0.75" maxWidth="Infinity"/>
+                        <Label fx:id="healthLabel" styleClass="bar-value" text="3420/4560"/>
+                    </StackPane>
+                </VBox>
+
+                <VBox styleClass="mana-container" HBox.hgrow="ALWAYS">
+                    <Label text="Maná" styleClass="bar-label"/>
+                    <StackPane>
+                        <ProgressBar fx:id="manaBar" styleClass="mana-bar" progress="0.85" maxWidth="Infinity"/>
+                        <Label fx:id="manaLabel" styleClass="bar-value" text="4250/5000"/>
+                    </StackPane>
+                </VBox>
+
+                <VBox styleClass="exp-container" HBox.hgrow="ALWAYS">
+                    <Label text="Experiencia" styleClass="bar-label"/>
+                    <StackPane>
+                        <ProgressBar fx:id="experienceBar" styleClass="exp-bar" progress="0.35" maxWidth="Infinity"/>
+                        <Label fx:id="expLabel" styleClass="bar-value" text="123500/350000"/>
+                    </StackPane>
+                </VBox>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="15">
+            <!-- Panel izquierdo - Estadísticas -->
+            <VBox styleClass="stats-panel" prefWidth="220">
+                <Label text="ATRIBUTOS" styleClass="section-title"/>
+                <GridPane hgap="10" vgap="5" styleClass="stats-grid">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="60"/>
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="40"/>
+                    </columnConstraints>
+
+                    <Label text="Fuerza:" styleClass="stat-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="strengthLabel" styleClass="stat-value" text="150" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Agilidad:" styleClass="stat-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="agilityLabel" styleClass="stat-value" text="90" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Aguante:" styleClass="stat-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <Label fx:id="staminaLabel" styleClass="stat-value" text="120" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Intelecto:" styleClass="stat-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <Label fx:id="intellectLabel" styleClass="stat-value" text="40" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Espíritu:" styleClass="stat-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <Label fx:id="spiritLabel" styleClass="stat-value" text="60" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="Armadura:" styleClass="stat-label" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <Label fx:id="armorLabel" styleClass="stat-value" text="950" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Label text="COMBATE" styleClass="section-title"/>
+                <GridPane hgap="10" vgap="5" styleClass="stats-grid">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="60"/>
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="40"/>
+                    </columnConstraints>
+
+                    <Label text="Daño:" styleClass="stat-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="damageLabel" styleClass="stat-value" text="87-120" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Poder de ataque:" styleClass="stat-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="attackPowerLabel" styleClass="stat-value" text="235" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Crítico:" styleClass="stat-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <Label fx:id="criticalLabel" styleClass="stat-value" text="12.4%" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Precisión:" styleClass="stat-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <Label fx:id="hitRatingLabel" styleClass="stat-value" text="5.8%" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                </GridPane>
+            </VBox>
+
+            <!-- Panel central - Equipamiento del personaje -->
+            <VBox styleClass="equipment-panel" alignment="CENTER">
+                <Label text="EQUIPAMIENTO" styleClass="section-title"/>
+
+                <ImageView styleClass="character-model" fitHeight="250" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/character-model.png"/>
+                    </image>
+                </ImageView>
+
+                <GridPane fx:id="equipmentGrid" alignment="CENTER" hgap="10" vgap="10" styleClass="equipment-grid">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="75"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="75"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="75"/>
+                    </columnConstraints>
+                    <!-- Los slots de equipo se añadirán automáticamente desde el controlador -->
+                </GridPane>
+            </VBox>
+
+            <!-- Panel derecho - Inventario -->
+            <VBox styleClass="inventory-panel">
+                <Label text="INVENTARIO" styleClass="section-title"/>
+
+                <GridPane fx:id="inventoryGrid" hgap="5" vgap="5" styleClass="inventory-grid">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="75"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="75"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="75"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="75"/>
+                    </columnConstraints>
+                    <!-- Los slots se generarán dinámicamente desde el controlador -->
+                </GridPane>
+
+                <Region VBox.vgrow="ALWAYS" prefHeight="10"/>
+
+                <HBox fx:id="quickBarContainer" styleClass="quick-bar" spacing="4" alignment="CENTER"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="5">
+            <!-- Barra de acción rápida -->
+            <HBox styleClass="footer-box" alignment="CENTER">
+                <Button text="Personaje" styleClass="tab-button" id="character-tab"/>
+                <Button text="Talentos" styleClass="tab-button" id="talents-tab"/>
+                <Button text="Habilidades" styleClass="tab-button" id="skills-tab"/>
+                <Button text="Reputación" styleClass="tab-button" id="reputation-tab"/>
+                <Button text="Logros" styleClass="tab-button" id="achievements-tab"/>
+                <Button text="Misiones" styleClass="tab-button" id="quests-tab"/>
+                <Button text="Mazmorras" styleClass="tab-button" id="dungeons-tab"/>
+                <Button text="PvP" styleClass="tab-button" id="pvp-tab"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
